@@ -107,8 +107,6 @@ Bundles drug response + omics from NCI-60, NCI-ALMANAC, NCI-SCLC, CCLE, GDSC, gC
 
 Datasets from individual papers (ionic liquids, iridium complexes, PHB/PHBV, silver nanoparticles, transcriptome-based cytotoxicity models, etc.) are already cytotoxicity-only by design — the IC50/EC50/CC50 or viability values are the primary output of the study. No filtering step is needed; download the supplementary file or linked repository from each paper's Data Availability statement.
 
-> This section is a placeholder — add specific papers/links here as they're identified (e.g. by database/journal search for the compound classes above), since these aren't indexed in one central portal.
-
 ---
 
 ## Notes
