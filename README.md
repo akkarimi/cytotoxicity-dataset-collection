@@ -13,6 +13,12 @@ Two broad categories, per the general pattern below:
 
 ### Tox21
 
+> **Already built:** [`data/tox21/`](data/tox21/) has this extracted, ready to use — a long-format
+> file (every compound × cell line × technology × timepoint) and a classification-ready summary
+> (one row per compound with a binary label), pulled from the AIDs below via
+> [`scripts/build_tox21_cytotoxicity.py`](scripts/build_tox21_cytotoxicity.py). See
+> [data/tox21/README.md](data/tox21/README.md) for the schema and label derivation.
+
 Cell viability / cytotoxicity assays (e.g. HEK293, HepG2 glo/fluor assays) are separate AIDs from the nuclear-receptor and stress-pathway assays, so filter by assay name. Two real-time assay technologies were run specifically for this purpose, at multiple exposure timepoints (0/8/16/24/32/40 h), each cell line getting its own AID:
 
 - **RealTime-Glo MT Cell Viability Assay** (metabolic activity): e.g. [AID 1224880](https://pubchem.ncbi.nlm.nih.gov/bioassay/1224880) (HEK293, 0h), [AID 1224886](https://pubchem.ncbi.nlm.nih.gov/bioassay/1224886) (HEK293, 24h), [AID 1224889](https://pubchem.ncbi.nlm.nih.gov/bioassay/1224889) (HepG2, 0h), [AID 1224867](https://pubchem.ncbi.nlm.nih.gov/bioassay/1224867) (HepG2, 24h) — full set spans AID 1224867–1224889.
@@ -23,6 +29,11 @@ Cell viability / cytotoxicity assays (e.g. HEK293, HepG2 glo/fluor assays) are s
 - **Flat files:** [tox21.gov/data-and-tools](https://tox21.gov/data-and-tools/) — download the Tox21 summary files and filter rows where `assay_name` contains `viability` or `cytotoxicity`. (Combined Tox21/ToxCast summary files are also mirrored on [EPA Figshare](https://epa.figshare.com/articles/dataset/ToxCast_and_Tox21_Summary_Files/6062479).)
 
 ### ToxCast
+
+> **Already built:** [`data/toxcast/`](data/toxcast/) has the chemical-level burst output extracted
+> and resolved to PubChem/SMILES, in the same normalized schema as [`data/tox21/`](data/tox21/) so
+> the two can be combined — see [`data/combined/`](data/combined/) for the pre-built union. Built via
+> [`scripts/build_toxcast_cytotoxicity.py`](scripts/build_toxcast_cytotoxicity.py).
 
 The "cytotoxicity burst" is a pre-defined, ready-to-use subset, available at two levels of granularity:
 
