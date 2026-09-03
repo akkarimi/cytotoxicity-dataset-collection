@@ -219,3 +219,4 @@ __marimo__/
 .claude
 *.pt
 *.ckpt
+raw_data/
